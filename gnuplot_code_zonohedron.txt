@@ -1,0 +1,169 @@
+### Plots for the paper: 'Production theory: accounting for firm
+### heterogeneity and technical change', authors: Giovanni Dosi,
+### Marco Grazzi, Luigi Marengo, Simona Settepanella.
+
+
+
+####### Table of Contents, as of May, 6th 2015
+# This file contains the code to replicate plots for the toy example
+# only. Data to replicate the exercise with firm-level data can be
+# accessed at Istat facilities in Rome (Italy)
+
+### A - PICTURES CURRENTLY IN THE PAPER  - IN ORDER
+#  Fig. 3  \label{fig:vectors}       Vectors representing firms in the toy example    
+#  Fig. 4  \label{fig:toy-example}   NOT PRODUCED IN GNUPLOT
+#  Fig. 5  \label{fig:solid}         NOT PRODUCED IN GNUPLOT
+#  Fig. 6  \label{fig:toy_solid_angle_t1}    planar section of the solid angle generated  
+#  Fig. 7  \label{fig:diagonal_tech_change} Productivity increase and the angle of the zonotope's main diagonal  diagonal_tech_change
+#  Fig. 8  \label{fig:entex}      Variation of heterogeneity
+#  Fig. 9  \label{fig:dea}        Data Envolopment Analysis on the illustrative example 
+
+
+
+
+#  Fig. 3  Vectors representing firms in the toy example
+#  \label{fig:vectors} 
+#  toy2, vectors-firms in year 1
+reset
+set label 1 'Labor' rotate by -8 at graph 0.7, graph -0.7, graph 0.25
+set label 2 'Capital' rotate by 30  at graph 1.3, graph -0.2, graph 0.1
+set label 3 'VA' at graph 0.028, graph -0.2, graph 1.3
+set ticslevel 0
+set term post eps enha mono dashed 'Times-Roman' 20
+set output 'toy2-example-vectors_1.eps'
+splot [0:10][0:10][0:10] "< gbget 'toy2-example-data_1.txt' -t '<0;0;0;x1;x2;x3>'  " using 1:2:3:4:5:6 with vectors filled head lw 2 notitle
+
+
+
+
+
+#  Fig. 6  \label{fig:toy_solid_angle_0}    planar section of the solid angle generated   
+
+!./zonohedron toy2-example-data_1.txt
+!mv boundary.txt .boundary1
+!./zonohedron toy2-example-data_2.txt
+!mv boundary.txt .boundary2
+
+## compute projection for a) all vectors; b) boundary vectors
+!./planecut toy2-example-data_1.txt [45 40 67] > .projec_toy2_1
+!./planecut .boundary1 [45 40 67] > .projec_toy2_bound_1
+!./planecut toy2-example-data_2.txt [45 40 67] > .projec_toy2_2
+!./planecut .boundary2 [45 40 67] > .projec_toy2_bound_2
+
+
+reset
+set label 1  'Firm 1'  at first -1.03,   first .4
+set label 2  'Firm 2'  at first -.15,   first -.175
+set label 3  'Firm 3'  at first -.79,   first  .29
+set label 4  'Firm 4'  at first -.59,   first  .184
+set label 5  'Firm 5'  at first -.66,   first  .09
+set label 6  'Firm 6'  at first -1.03,  first  -.53
+set label 7  'Firm 7'  at first -.18,   first  .32
+set label 8  'Firm 8'  at first -.955,  first  -.37
+set label 9  'Firm 9'  at first -1.76,  first  0.035
+set label 10 'Firm 10' at first -.36,   first -.57
+set term post eps enha mono dashed 'Times-Roman' 22
+set output 'toy2-example_solid_angle_t1.eps'
+plot [-1.8:0.1][-0.6:.5] "< gbget -F ',' '.projec_toy2_1'  " w p pt 8 ps 2.5 notitle  ,\
+"< gbget -F ',' '.projec_toy2_bound_1(,1;2;4;3;5;6;1)' " w l lt -1 lw 2 title '{/Symbol W}_1' 
+
+reset
+#set ytics format ""
+#set y2tics
+set label 1  'Firm 1'  at first -1.03,   first .4
+set label 2  'Firm 2'  at first -.15,   first -.175
+set label 3  'Firm 3'  at first -.79,   first  .29
+set label 4  'Firm 4'  at first -.59,   first  .184
+set label 5  'Firm 5'  at first -.66,   first  .09
+set label 6  'Firm 6'  at first -1.03,  first  -.53
+set label 7  'Firm 7'  at first -.18,   first  .32
+set label 8  'Firm 8'  at first -.16,   first  .14 font "Times-Roman Bold"
+set label 9  'Firm 9'  at first -0.16,  first  0.4 font "Times-Roman Bold"
+set label 10 'Firm 10' at first -.14,   first  0.0 font "Times-Roman Bold"
+set term post eps enha mono dashed 'Times-Roman' 22
+set output 'toy2-example_solid_angle_t2.eps'
+plot [-1.8:0.1][-0.6:.5] "< gbget -F ',' '.projec_toy2_2'  "  w p pt 4 ps 2 notitle ,\
+"< gbget -F ',' '.projec_toy2_bound_2(,1;2;3;4;1)' "  w l lt 3 lw 1 title '{/Symbol W}_2'
+
+
+
+
+
+
+#  Fig. 7  \label{fig:diagonal_tech_change} Productivity increase and the angle of the zonotope's main diagonal  
+# get the coordinates of the diagonal
+!./zonohedron  toy2-example-data_1.txt
+!./zonohedron  toy2-example-data_2.txt
+
+### diagonal technical change
+reset
+set label 3 'VA' at graph 0.028, graph -0.2, graph 1.3
+set xlabel 'Labor'
+set ylabel 'Capital'
+set contour base
+set cntrparam levels incremental 0,0.1,100
+set style data lines
+set view 50,53
+set ticslevel 0
+set term post eps enha mono dashed dl 3 'Times-Roman' 20
+set output 'diagonal_tech_change.eps'
+splot [0:52][0:52][0:100]"< echo 0 0 0 50 40 67" using 1:2:3:4:5:6 with vectors filled head  lw  1.5  lt 1      title  'Diagonal year 1' ,\
+                         "< echo 0 0 0 37 39 89" using 1:2:3:4:5:6 with vectors filled head  lw  2.5  lt 2 dt 3 title  'Diagonal year 2' ,\
+                         "< echo 0 0 0 50 40 00" using 1:2:3:4:5:6 with vectors filled head  lw  1    lt 1 dt 4 title  'Proj year 1' ,\
+                         "< echo 0 0 0 37 39 00" using 1:2:3:4:5:6 with vectors filled head  lw  1    lt 1 dt 4 title  'Proj year 2' 
+
+
+
+
+
+
+
+#  Fig. 8  \label{fig:entex}                Variation of heterogeneity....  
+## toy2
+!./zonohedron toy2-example-data_1.txt  gini 10 10 5 0.5 0.5 > toy2_with_entry_exit.txt
+reset
+set pm3d
+set xlabel "Labor"
+set ylabel "Capital"
+set zlabel "G(X)" offset graph 0.18,0,.7
+set style line 1 lt 4 lw .5
+set ztics 0.105,0.01,0.175
+set pm3d at s hidden3d 1
+unset surf
+#set zrange[0.085: 0.14]
+set palette gray negative
+set term post eps enha mono 'Times-Roman' 20
+set output 'entry_exit_toy2.eps'
+set view 45, 338, 1, 1
+splot 'toy2_with_entry_exit.txt' notitle
+
+
+
+
+
+
+
+
+#  Fig. 9  \label{fig:dea}                  Data Envolopment Analysis on the illustrative example   toy2-example-dea
+!gbget 'toy2-example-data_1.txt' -t '<x1/x3;x2/x3>' -o '%6.2f'
+reset
+set xlabel 'Labor/VA'
+set ylabel 'Capital/VA' 
+set label 3   'Firm 3' at first 0.55, first 0.32
+set label 11  'Firm 1' at first 0.72, first 0.12
+set label 22  'Firm 2' at first 0.07, first 0.92
+set label 7   'Firm 7' at first 0.1, first 0.12
+set label  9  'Firm  9' at first 1.88, first 0.78
+set label 10  'Firm 10' at first 0.6, first 1.865
+set term post eps enha mono dashed dl 3 'Times-Roman' 20
+set output 'toy2-example-dea.eps'
+plot [0:2.1][0:2.1]"< gbget 'toy2-example-data_1.txt' -t '<x1/x3;x2/x3>'  " w p pt 2 ps 2 notitle ,\
+"<                    gbget 'toy2-example-data_1.txt(,2;7;1)' -t '<x1/x3;x2/x3>' " w l lt 1 lw 2 title 'efficient frontier' ,\
+"< echo -e '0.2222 0.2222 \n 10 -0.1538089' | gbget '()' " w l dt 2 lw 0.5  notitle ,\
+"< echo -e '0.2222 0.2222 \n 0 6.000540054' | gbget '()' " w l dt 2 lw 0.5 notitle ,\
+"< echo -e '0 0 \n 0.75 1.75' | gbget '()' " w l dt 3 lw 0.5 notitle ,\
+"< echo -e '0 0 \n 2 0.666667' | gbget '()' " w l dt 3 lw 0.5 notitle 
+
+
+
+

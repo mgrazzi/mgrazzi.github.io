@@ -1,0 +1,9 @@
+if (window['google'] != undefined && window['google']['loader'] != undefined) {
+if (!window['google']['visualization']) {
+window['google']['visualization'] = {};
+google.visualization.Version = '1.0';
+google.visualization.JSHash = '97e6275dc5c50efe5944ddda289e59d2';
+google.visualization.LoadArgs = 'file\75visualization\46v\0751\46packages\75geochart';
+}
+google.loader.writeLoadTag("script", google.loader.ServiceBase + "/api/visualization/1.0/97e6275dc5c50efe5944ddda289e59d2/format+en,default,geomap,geochart.I.js", false);
+}
