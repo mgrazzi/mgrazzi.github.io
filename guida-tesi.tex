@@ -1,0 +1,236 @@
+\documentclass[12pt]{article}
+%\usepackage[a4paper]{geometry}
+\usepackage[a4paper,left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage[italian,english]{babel}
+\usepackage{amssymb}
+\usepackage{amsmath}  %\documentstyle{numline} 
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{authblk}
+%\usepackage{fancyhdr}
+\usepackage[usenames]{color}
+\usepackage{soul}
+\usepackage{setspace}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{dcolumn}
+%\newcolumntype{.}{D{.}{.}{-1}}
+\usepackage{placeins}
+\usepackage{booktabs}
+
+\usepackage[colorlinks,allcolors=blue]{hyperref}  % for buttons
+%\usepackage[urlcolor=blue]{hyperref}  
+% \hypersetup{
+%    colorlinks=true,
+%    linkcolor=blue,
+%    filecolor=magenta,      
+%    urlcolor=blue,
+%}
+%\onehalfspacing
+\sethlcolor{Orange}
+%\usepackage[first,bottom]{draftcopy}
+\usepackage{draftwatermark}
+\SetWatermarkText{Draft Version}
+\SetWatermarkScale{5}
+\usepackage{eurosym}
+\usepackage[authoryear]{natbib}
+%\bibliographystyle{chicago}
+\bibliographystyle{ecta}
+%\bibliographystyle{dcu}%{agsm}  %
+\graphicspath{{./figures/}}
+
+\renewcommand{\refname}{Bibliografia}
+
+\hyphenation{in-te-res-sa-te   in-te-res-se   rap-pre-sen-ta-to   mo-del-li   mo-del-lo   si-ste-ma-ti-co   sem-pli-ci-sti-co   o-pe-ra-to-ri   me-de-si-me   i-ta-lia-no  ve-ri-fi-ca   sta-ti-sti-che   sta-ti-sti-ca-men-te   nor-ma-liz-za-re   con-si-de-ra-re   in-clu-sio-ne   e-sclu-sio-ne   e-sclu-de-re  o-pe-ra-zio-ni   o-pe-ra-zio-ne   sta-ti-sti-ca   ri-fe-ri-men-to   se-con-do  Se-con-do  de-via-zio-ne   va-rian-za  ela-sti-ca   con-si-de-ra-zio-ni mo-di-fi-che ma-nu-factu-ring Ma-nu-factu-rin Pro-dut-ti-vi-ta pro-dut-ti-vi-ta in-du-stria cam-bia-men-to am-mi-ni-stra-zio-ne}
+
+
+
+
+\newcommand{\EP}{\mathrm{ \scriptscriptstyle EP}}
+\newcommand{\SEP}{\mathrm{ \scriptscriptstyle SEP}}
+\newcommand{\AEP}{\mathrm{ \scriptscriptstyle AEP}}
+\newcommand{\GHYP}{\mathrm{ \scriptscriptstyle GHYP}}
+\newcommand{\ASY}{\mathrm{ \scriptscriptstyle ASY}}
+\newcommand{\RMSE}{\mathrm{ \scriptscriptstyle RMSE}}
+
+\bibpunct{(}{)}{;}{a}{,}{,}
+
+
+\title{ \textsc{Note per il lavoro di tesi}\thanks{Versione Febbraio
+    2019. Ringrazio gli studenti che negli anni e nelle varie sedi con
+    le loro domande hanno contribuito all stesura di queste pagine.}}
+
+
+\author{Marco Grazzi\thanks{Universit\`a Cattolica del Sacro Cuore, Dipartimento di Politica Economica.}}
+
+ % \small{\date{\today}}
+\date{\empty}
+
+
+\begin{document}
+\maketitle
+
+
+
+
+
+\section{Introduzione}
+
+Queste note sono rivolte agli studenti che stanno valutando di
+scrivere la tesi sotto la mia supervisione. Leggetele con attenzione
+prima di venire a ricevimento o contattarmi per mail. Queste
+indicazioni si aggiungono (e non sostituiscono!) alle istruzioni
+fornite dalle segreterie studenti.
+
+Il presente documento si rivolge sia agli studenti di laurea triennale
+(LT) che di laurea magistrale (LM). A questi ultimi anticipo che, in
+virt\`u del lavoro svolto in classe durante il corso, sar\`a richiesta
+una parte di analisi empirica, preferibilmente di tipo
+microeconomico. A tal fine gli studenti possono utilizzare le fonti
+disponibili nella biblioteca tra le risorse elettroniche, che trovate
+al link:
+\href{https://biblioteche.unicatt.it/brescia-servizi-per-utenti-interni-ricerche-bibliografiche-e-banche-dati}{Risorse
+  Elettroniche Unicatt}. Cliccate poi su Banche dati. Verificate se
+sia necessario autenticarsi con le vostre credenziali.
+
+%\subsubsection*{Scelta della materia e dell'argomento di tesi}
+
+La tesi dovr\`a riguardare argomenti economici, in particolare quelli
+affrontati nel corso. Questo vuol dire, solo per fare un esempio, che
+se volete studiare le strategie di un'impresa o affrontare un caso
+aziendale, questa non \`e la materia adeguata.
+
+Se invece siete interessati ad una materia economica, ed in
+particolare ad uno dei temi affrontati nel mio corso, allora il mio
+(caloroso) suggerimento \`e di proporre voi uno o pi\`u argomenti di
+tesi; avrete cos\`i occasione di scegliere e sviluppare un argomento di
+vostro interesse. Al primo ricevimento discuteremo le vostre proposte.
+
+
+
+\section{I tempi}
+Siete ovviamenti voi stessi i responsabili del rispetto dei tempi
+richiesti dall'amministra-zione.\footnote{Qui trovate il link con le
+  scadenze:
+  \href{https://milano.unicatt.it/facolta/economia-informazioni-per-gli-studenti-esami-di-laurea-294}{link
+    scadenze}. } Considerate che in certi periodi mi pu\`o capitare di
+ricever molte richieste di tesi e non sempre riesco a dare seguito a
+tutte. Mi scuso in anticipo per questo.
+
+
+
+\section{Lavoro preliminare: le fonti}\label{sec:fonti}
+Una tesi, sia LT che LM, prevede un lavoro preliminare sulle fonti
+bibliografiche. Cosa \`e gi\`a stato detto su un certo argomento?
+Suggerisco di partire dai materiali del corso (libro, appunti,
+articoli). Ci sono poi innumerevoli strumenti informatici che
+permettono di espandere il raggio d'azione e risalire a fonti
+precedenti o, al contrario, di spostarsi a lavori successivi che
+citano quello di partenza; tra i molti richiamo
+\textit{google.scholar}. Nel campo di ricerca inserite il titolo del
+lavoro che cercate o parole chiavi del vostro argomento di
+ricerca. Tra le fonti individuate date preferenza a quelle pi\`u
+recenti e che sono gi\`a pubblicate su rivista in quanto hanno gi\`a
+superato un vaglio editoriale. Segnalo inoltre inoltre le seguenti
+riviste scientifiche che hanno un approccio rigoroso, ma hanno
+carattere pi\`u divulgativo e quindi pi\`u facilmente accessibili:
+\href{https://www.aeaweb.org/journals/jep}{Journal of Economic
+  Perspective} e \href{https://www.aeaweb.org/journals/jel}{Journal of
+  Economic Literature}.
+
+Pu\`o essere utile perdersi per qualche giorno in questo ``mare'' di
+fonti; \`e poi necessario concludere questa fase di esporazione e
+delimitare il campo di analisi. Al termine di questo lavoro di
+raccolta informazioni, selezione e lettura suggerisco di abbozzare la
+struttura dell'elaborato.
+
+Considerate infine che gran parte della bibliografia economica degli
+anni pi\`u recenti \`e in lingua inglese.
+
+
+
+\section{La struttura dell'elaborato}
+Con estrema sintesi e semplificazione, un elaborato deve contenere
+innanzitutto un'introduzione in cui si illustra la questione (la tesi,
+la ``domanda di ricerca'') che sar\`a affrontata. La stessa
+introduzione (o il capitolo successivo) deve fornire i riferimenti
+alla letteratura scientifica di riferimento (andate alle fonti,
+limitate al massimo o escludete proprio i riferimenti alla stampa
+generalista). Per quanto recente pu\`o essere l'argomento che avete
+scelto, qualcuno vi avr\`a gi\`a anticipato: prima di tentare di
+aggiungere il vostro contributo fornite quindi una vostra
+interpretazione dello \textit{stato dell'arte}.  I capitoli centrali
+sviluppano il tema. Le conclusioni vi permettono di aggiungere il
+vostro personale contributo interpretativo sull'argomento che avete
+scelto.
+
+
+\subsection*{L'analisi empirica (LM)}
+Se la vostra \`e una tesi di LM uno dei capitoli centrali sar\`a
+dedicato all'analisi empirica di uno o pi\`u settori economici con
+dati micro, ovvero a livello di impresa. I dati li potete reperire
+tramite le risorse online Unicatt (vedere a
+\href{https://biblioteche.unicatt.it/brescia-servizi-per-utenti-interni-ricerche-bibliografiche-e-banche-dati}{questo}
+link). Se tramite canali personali o lavorativi avete accesso a fonti
+che ritenete pi\`u interessanti, valuteremo questa possibilit\`a ad un
+ricevimento. 
+
+Le analisi empiriche possono riguardare (in modo non esaustivo) i temi
+gi\`a affrontati in classe. Qui potete trovare il riferimento a questo
+visto durante il corso:\\
+\href{http://mgrazzi.github.io/istruz-lavoro-gruppo.pdf}{mgrazzi.github.io/istruz-lavoro-gruppo.pdf}.
+
+
+
+
+\section{Fonti bibliografiche}
+
+Allo stesso modo con cui \`e importante fornire informazioni sul del
+materiale utilizzato nell'elaborato (ad esempio, dati, tabelle,
+figure), \`e necessario citare le fonti bibliografiche a cui si fa
+riferimento. Tutte le fonti (articoli, libri, capitoli in libro,
+working papers, etc) citate devono poi essere riportate nella
+bibliografia in fondo alla tesi. Riporto di seguito un testo (in
+inglese) che contiene citazioni a vari lavori, tutti poi riportati in
+bibliografia. 
+
+\vspace{0.3cm}
+
+\small{An important stream of literature within industrial
+  economics has for long been interested in assessing the contribution
+  to employment creation stemming from the different firm-size
+  classes. In this respect, at least since \cite{birch_1981}, small
+  firms have been considered as a much relevant source of job
+  creation. The increasing availability of firm level dataset has
+  further contributed to foster research on the issue, starting from
+  the seminal works of \cite{davis_haltiwanger_1992} and
+  \cite{davis_etal_1996}. These studies represented a relevant
+  advancement for the understanding of employment and industrial
+  dynamics, in that they confirmed, by means of new methodological and
+  empirical tools, that smaller firms are major players in terms of
+  job churning, hence contributing both to employment creation and
+  destruction \citep[among the others, also refer
+  to][]{davis_haltiwanger_1995}.}
+
+
+
+\subsection*{Quale programma utilizzare: la mia scelta}
+Questo documento \`e stato scritto con \LaTeX. Ai seguenti link
+trovate il file \textit{sorgente} e il database per la bibliografia:
+\href{http://mgrazzi.github.io/guida-tesi.tex}{file latex} e
+\href{http://mgrazzi.github.io/bib_file_esempio.bib}{file bibtex}. Tra
+i vari vantaggi di \LaTeX
+(\href{https://tobi.oetiker.ch/lshort/lshort.pdf}{a questo link}
+trovate una guida), vi \`e la gestione completamente automatica della
+bibliografia. Ovviamente potete anche usare altri programmi,
+
+
+\bibliography{bib_file_esempio.bib}
+
+
+\end{document}
