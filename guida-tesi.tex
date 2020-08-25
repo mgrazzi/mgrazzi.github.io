@@ -22,31 +22,50 @@
 %\newcolumntype{.}{D{.}{.}{-1}}
 \usepackage{placeins}
 \usepackage{booktabs}
+\usepackage{color}
 
-\usepackage[colorlinks,allcolors=blue]{hyperref}  % for buttons
-%\usepackage[urlcolor=blue]{hyperref}  
-% \hypersetup{
-%    colorlinks=true,
-%    linkcolor=blue,
-%    filecolor=magenta,      
-%    urlcolor=blue,
-%}
-%\onehalfspacing
+\usepackage[colorlinks=true, linkcolor=true, urlcolor=blue, allcolors=blue]{hyperref}  % for buttons
+
+
+%   \onehalfspacing
 \sethlcolor{Orange}
 %\usepackage[first,bottom]{draftcopy}
-\usepackage{draftwatermark}
-\SetWatermarkText{Draft Version}
-\SetWatermarkScale{5}
+%\usepackage{draftwatermark}
+%\SetWatermarkText{Draft Version}
+%\SetWatermarkScale{3}
 \usepackage{eurosym}
+%%%%  incompatible with biblatex  \usepackage[authoryear]{natbib}
 \usepackage[authoryear]{natbib}
-%\bibliographystyle{chicago}
-\bibliographystyle{ecta}
-%\bibliographystyle{dcu}%{agsm}  %
+\bibliographystyle{myplainnat}
+\usepackage{url}
+%\usepackage{doi}
+% \bibliographystyle{dcu}%{agsm}  %
 \graphicspath{{./figures/}}
+
+
+% \usepackage[style=authoryear-comp,backend=bibtex,uniquename=init,giveninits,maxcitenames=2,natbib=true,url=true,doi=false,eprint=false]{biblatex}
+% \bibliography{bib_file_esempio.bib}
+% % \bibliography{/home/marco/work/bibliog/bib_file_cvs_synced}
+% %\setcolor*{bibliography entry title}{fg=blue}
+% %\setcolor*{bibliography entry author}{fg=black}
+% %\setcolor*{bibliography entry location}{fg=black}
+% %\setcolor*{bibliography entry note}{fg=black}
+% %\setbeamertemplate{bibliography item}{}
+% \renewcommand*{\bibfont}{\small}
+% \setlength\bibitemsep{1.5\itemsep}
+
+% \newcommand\mkbibcolor[2]{\textcolor{#1}{\hypersetup{citecolor=#1}#2}}
+% \DeclareCiteCommand{\cite}[\mkbibcolor{blue}]
+%   {\usebibmacro{prenote}}%
+%   {\usebibmacro{citeindex}%
+%    \usebibmacro{cite}}
+%   {\multicitedelim}
+%   {\usebibmacro{postnote}}
+
 
 \renewcommand{\refname}{Bibliografia}
 
-\hyphenation{in-te-res-sa-te   in-te-res-se   rap-pre-sen-ta-to   mo-del-li   mo-del-lo   si-ste-ma-ti-co   sem-pli-ci-sti-co   o-pe-ra-to-ri   me-de-si-me   i-ta-lia-no  ve-ri-fi-ca   sta-ti-sti-che   sta-ti-sti-ca-men-te   nor-ma-liz-za-re   con-si-de-ra-re   in-clu-sio-ne   e-sclu-sio-ne   e-sclu-de-re  o-pe-ra-zio-ni   o-pe-ra-zio-ne   sta-ti-sti-ca   ri-fe-ri-men-to   se-con-do  Se-con-do  de-via-zio-ne   va-rian-za  ela-sti-ca   con-si-de-ra-zio-ni mo-di-fi-che ma-nu-factu-ring Ma-nu-factu-rin Pro-dut-ti-vi-ta pro-dut-ti-vi-ta in-du-stria cam-bia-men-to am-mi-ni-stra-zio-ne}
+\hyphenation{in-tro-du-zio-ne    in-te-res-sa-te   in-te-res-se   rap-pre-sen-ta-to   mo-del-li   mo-del-lo   si-ste-ma-ti-co   sem-pli-ci-sti-co   o-pe-ra-to-ri   me-de-si-me   i-ta-lia-no  ve-ri-fi-ca   sta-ti-sti-che   sta-ti-sti-ca-men-te   nor-ma-liz-za-re   con-si-de-ra-re   in-clu-sio-ne   e-sclu-sio-ne   e-sclu-de-re  o-pe-ra-zio-ni   o-pe-ra-zio-ne   sta-ti-sti-ca   ri-fe-ri-men-to   se-con-do  Se-con-do  de-via-zio-ne   va-rian-za  ela-sti-ca   con-si-de-ra-zio-ni mo-di-fi-che ma-nu-factu-ring Ma-nu-factu-rin Pro-dut-ti-vi-ta pro-dut-ti-vi-ta in-du-stria cam-bia-men-to am-mi-ni-stra-zio-ne}
 
 
 
@@ -61,9 +80,12 @@
 \bibpunct{(}{)}{;}{a}{,}{,}
 
 
-\title{ \textsc{Note per il lavoro di tesi}\thanks{Versione Febbraio
-    2019. Ringrazio gli studenti che negli anni e nelle varie sedi con
-    le loro domande hanno contribuito all stesura di queste pagine.}}
+\title{ \textsc{Note per il lavoro di tesi}\thanks{Versione Agosto
+    2020. Ringrazio gli studenti che negli anni e nelle varie sedi con
+    le loro domande hanno contribuito all stesura di queste
+    pagine. Continuate ad inviare eventuali suggerimenti e contributi
+    al mio indirizzo di lavoro. Anche segnalazioni su link non pi\`u
+    validi o simili sono utili.}}
 
 
 \author{Marco Grazzi\thanks{Universit\`a Cattolica del Sacro Cuore, Dipartimento di Politica Economica.}}
@@ -79,7 +101,7 @@
 
 
 
-\section{Introduzione}
+\section{Introduzione}\label{sec:intro}
 
 Queste note sono rivolte agli studenti che stanno valutando di
 scrivere la tesi sotto la mia supervisione. Leggetele con attenzione
@@ -136,12 +158,18 @@ citano quello di partenza; tra i molti richiamo
 lavoro che cercate o parole chiavi del vostro argomento di
 ricerca. Tra le fonti individuate date preferenza a quelle pi\`u
 recenti e che sono gi\`a pubblicate su rivista in quanto hanno gi\`a
-superato un vaglio editoriale. Segnalo inoltre inoltre le seguenti
-riviste scientifiche che hanno un approccio rigoroso, ma hanno
-carattere pi\`u divulgativo e quindi pi\`u facilmente accessibili:
+superato un vaglio editoriale. Segnalo il portale
+\href{https://voxeu.org/}{voxeu.org} che pubblica articoli scritti da
+economisti per divulgare i risultati di lavori scientifici. Segnalo
+inoltre inoltre le seguenti riviste scientifiche che hanno un
+approccio rigoroso, ma hanno carattere pi\`u divulgativo e quindi
+pi\`u facilmente accessibili:
 \href{https://www.aeaweb.org/journals/jep}{Journal of Economic
   Perspective} e \href{https://www.aeaweb.org/journals/jel}{Journal of
-  Economic Literature}.
+  Economic Literature}. Per accedere agli articoli scientifici non
+disponibili liberamente quando non siete fisicamente in Universit\`a,
+utilizzate le risorse elettroniche di Ateneo (facendo login)
+\href{https://www.unicatt.it/off-campus}{off-campus}.
 
 Pu\`o essere utile perdersi per qualche giorno in questo ``mare'' di
 fonti; \`e poi necessario concludere questa fase di esporazione e
@@ -178,17 +206,37 @@ tramite le risorse online Unicatt (vedere a
 \href{https://biblioteche.unicatt.it/brescia-servizi-per-utenti-interni-ricerche-bibliografiche-e-banche-dati}{questo}
 link). Se tramite canali personali o lavorativi avete accesso a fonti
 che ritenete pi\`u interessanti, valuteremo questa possibilit\`a ad un
-ricevimento. 
+ricevimento. Deve per\`o esser chiaro che il lavoro di tesi nella mia
+materia deve riguardare l'analisi di un settore industriale (o
+comunque uno dei temi richiamati nella
+Sezione~\ref{sec:idee-tesi}). Nella mia materia non sono quindi
+adeguati dei \textit{case studies} focalizzati su un'impresa o su un
+numero di imprese talmente ridotto da non risultare rappresentativo
+dell'intero settore. A tal proposito anticipo che per affrontare
+adeguatamente il lavoro empirico \`e consigliabile ricorrere a
+strumenti software che permettano la gestione di database di grandi
+dimensioni, in quanto il numero di imprese (da qualche centinaio a
+qualche migliaio), le variabili per le analisi, gli anni di
+osservazione non di rado generano una mole di dati non facile da
+trattare tramite con il solo Excel. Ciascuno studente pu\`o utilizzare
+il software che preferisce. Tra i molti esistenti segnalo, senza
+pretesa di essere esaustivo, \href{https://www.stata.com/}{Stata},
+\href{https://www.r-project.org/}{R} \textit{a free software}, o la
+possibilit\`a di gestire dati offerta da
+\href{https://www.python.org/}{Python},
+\href{http://www.data-analysis-in-python.org/}{data analysis in
+  Python}.
 
-Le analisi empiriche possono riguardare (in modo non esaustivo) i temi
-gi\`a affrontati in classe. Qui potete trovare il riferimento a questo
+Nel merito, il tipo di analisi empiriche pu\`o riguardare anche (in modo non
+esaustivo) i temi gi\`a affrontati in classe. Qui potete trovare il
+riferimento a questo
 visto durante il corso:\\
 \href{http://mgrazzi.github.io/istruz-lavoro-gruppo.pdf}{mgrazzi.github.io/istruz-lavoro-gruppo.pdf}.
 
 
 
 
-\section{Fonti bibliografiche}
+\section{Sulle spalle dei giganti: citare le fonti}%Fonti bibliografiche}
 
 Allo stesso modo con cui \`e importante fornire informazioni sul del
 materiale utilizzato nell'elaborato (ad esempio, dati, tabelle,
@@ -218,19 +266,195 @@ bibliografia.
   to][]{davis_haltiwanger_1995}.}
 
 
+\section{Alcune idee per argomenti di tesi}\label{sec:idee-tesi}
+Come gi\`a spiegato nella sezione~\ref{sec:intro} suggerisco
+fortemente che siate voi a proporre un argomento che, ovviamente
+all'interno del perimetro della materia, susciti il vostro interesse e
+desiderio di approfondire. Riporto di seguito, senza un ordine
+preciso, alcune idee, con alcuni spunti, assolutamente parziali,
+bibliografici.\footnote{E` certo pi\`u interessante seguire un'idea di
+  tesi che parta dal vostro interesse. Tuttavia durante il periodo
+  segnato da COVID-2019 (da Marzo 2020) ho aggiunto questa sezione per
+  favorire il lavoro da remoto, in assenza di ricevimenti in
+  presenza.} Partite da questi spunti per cercare nuovo materiale
+secondo le indicazioni fornite nella Sezione~\ref{sec:fonti}.
 
+
+\subsubsection*{Oltre il GDP (\textit{Beyond GDP})}
+
+Un punto di partenza \`e il rapporto di Stiglitz, Sen e Fitoussi
+\citep{stiglitz_etal_beyond-gdp}. Considerate inoltre il rapporto ISTAT \href{https://www.istat.it/it/archivio/rapporto+bes}{Benessere Equo e Sostenibile}; i rapporti OECD
+\href{http://www.oecd.org/statistics/better-life-initiative.htm}{Better
+  Life Initiative};
+\href{http://www.oecd.org/social/for-good-measure-9789264307278-en.htm}{For
+  Good Measure} e questi altri strumenti
+\href{https://www.project-syndicate.org/commentary/new-metrics-of-wellbeing-not-just-gdp-by-joseph-e-stiglitz-2018-12}{new
+  metrics of wellbeing}; \href{https://www8.gsb.columbia.edu/faculty/jstiglitz/sites/jstiglitz/files/The%20Measurement%20of%20Economic%20Performance%20and%20Social%20Progress.pdf}{Economic Performance and Social Progress}.
+
+  
+\subsubsection*{Reddito di inclusione, cittadinanza, o \textit{Basic Income}}
+
+Tra gli altri, partite da \cite{toso_2016},
+\cite{vanparijs_2017_basic-income}. Per una prospettiva storica fare
+riferimento a \cite{orsi_2018}.
+
+
+\subsubsection*{Disuguaglianza}
+
+Tra i molti altri altri, partite da: \cite{atkinson_2010_top,
+  piketty_2014_capital, piketty_2015_inequality, atkinson_2015,
+  milanovic_2011_worlds, milanovic_2016_global}. Molto utile la
+possibile di visualizzare dati su \href{https://wid.world/}{World
+  Inequality Database}. Sull'Italia in particolare, vedere, tra gli
+altri \cite{pianta_franzini_2016, pianta_2012_nove}
+
+
+
+\subsubsection*{Debito pubblico e crescita, sostenibilit\`a del debito, moltiplicatori fiscali}
+
+Tra i molti altri, il libro della World Bank su
+\href{https://www.worldbank.org/en/research/publication/waves-of-debt}{Global
+  Waves of Debt}; la AEA presidential lecture di Blanchard su Debito
+Pubblico e bassi tassi di interesse \citep{blanchard_2019} ed una
+\href{https://voxeu.org/content/olivier-wonderland}{risposta}. Inoltre vedere
+\href{https://voxeu.org/article/debt-and-financial-crises-will-history-repeat-itself}{Debt
+  and financial crises};
+\href{https://voxeu.org/article/stress-testing-eu-fiscal-framework}{Stress
+  testing}; \href{
+  https://www.imf.org/external/pubs/ft/sdn/2015/sdn1510.pdf}{When
+  public debt should be reduced}
+
+Sui moltiplicatori fiscali vedere \cite{spilimbergo_etal_2009_fiscal}   e sull'Italia il lavoro di De Nardis e Pappalardo per l'ufficio parlamentare di Bilancio \href{http://www.upbilancio.it/nota-di-lavoro-12018/}{(link al paper).}
+
+
+\subsubsection*{Start-up, Entrepreneurship and Industry Dynamics}
+
+The following paragraph is an excerpt from
+\cite{grazzi_moschella_2018}. In addition refer also to
+\cite{santarelli_vivarelli_2007, vivarelli_2013_ICC}. \vspace{0.5cm}
+
+
+In this respect, at least
+since the work of \cite{birch_1981}, small firms have been considered,
+especially by policy makers, as a relevant source of job creation. The
+hypothesis according to which smaller firms grow more than bigger ones
+would represent an apparent violation of the Gibrat's law \citep[see,
+among the others,][]{sutton_1997, lotti_etal_2003, coad_2009}. The
+increasing availability of firm level dataset has further fostered
+research on the topic
+\citep[see, in particular,][]{davis_haltiwanger_1992, davis_etal_1996}. These first
+works, in addition to providing a methodological benchmark for future
+studies, confirmed that smaller firms were major players in terms of
+job churning, hence contributing both to employment creation and
+destruction. More recent contributions, also
+encompassing the role of firm age, challenge that
+evidence.\footnote{\cite{evans_1987_a, evans_1987_b} provided an early
+  attempt to look at the effect of age on the size-growth
+  relationship. The author, employing firm-level data for
+  U.S. manufacturing firms, reported an inverse relationship between
+  firm growth and size (holding firm age constant) and between firm
+  growth and age (holding firm size constant). However, as noted by
+  Evans, the available data underrepresented smaller firms.} In
+particular, \cite{haltiwanger_etal_2013}, using data from the Census
+Bureau's Longitudinal Business Database (LBD), show that the negative
+relationship between firm size and growth disappears and may even
+reverse sign among the biggest firms.  This evidence casts doubt on
+policy interventions aimed at small businesses but ignoring the role
+of firm age.  Along similar lines, \cite{lawless_2014}, using survey
+data on Irish firms, show that once accounting for firm age the
+inverse relationship between growth and size declines very markedly
+across different age categories.  The present paper contributes to
+this literature by showing that the export status is a
+crucial dimension to understand firm growth patterns together with
+firm age and size. 
+%Further, we also investigate how the age and the size of the
+%firms jointly contribute to shape their growth.
+
+
+
+\subsubsection*{Technology, Employment and Industry Dynamics}
+
+The following three paragraphs are an excerpt from
+\cite{domini_etal_2019}, to which I refer for a broader
+discussion. Also refer to \cite{vivarelli_2007}. \vspace{.5cm}
+
+
+Technology is presented in the policy debate either as a major threat
+to employment -- reviving the concept of technological unemployment
+--, or as the main driver of societal change.  Such mix of fear and
+excitement can also be explained with the difficulty to catch-up with
+a moving target: the speed of change is increasing, both across the
+revolutions themselves (it took a century to go from the mechanical to
+the electrical paradigms, and then another one to the ICT revolution,
+but less than fifty years to reach the digital age) and within the
+current one, as emerging technologies pop-up every day.
+
+Assessing how such innovations affect employment has been at the
+centre of economic debates, both in terms of the effects on the single
+person, i.e. how the changing working conditions affect the life of
+people, as well as on employment at a more aggregate level (Ricardo,
+Marx and Keynes all have discussed technological unemployment, for a
+recent review, see \citealp{piva_vivarelli_2017}). Yet the extent and
+the manners through which Artificial Intelligence, robotisation, and
+digital technologies more in general, are expected to impact on work
+are much broader than in previous waves of innovations.  In the
+contemporary economic scenario one can envisage at least two,
+relatively new, challenges. On the one hand, the type of jobs affected
+is much more diffused and difficult to identify. Previously, it was
+mostly manual jobs that were at risk of being replaced by a
+machine. Currently, all jobs that are rich in routine-intensive,
+highly codified tasks are exposed to the risk of being replaced by a
+machine \citep[see, for instance,][]{autor_etal_2003_QJE,
+  goos_etal_2014, autor_2015_JEP}. Moreover, this process is largely
+orthogonal to the traditional classification in blue versus white
+collar jobs \citep[among the others, refer to][]{frey_osborne_2017,
+  trajtenberg_2018, furman_seamans_2018}.\footnote{In this respect,
+  the distinction between codified and tacit knowledge, and its
+  implication, as put forth in a vivid way by \cite{polanyi_1967}, has
+  been very relevant in shaping the debate around the so-called
+  Skill-Biased Technical Change \citep[see among the many
+  others][]{autor_etal_2003_QJE, autor_2015}.} On the other hand, also
+the share of firms and sectors that are, at least potentially, exposed
+is much broad. Previous changes in technological paradigms have led to
+structural change and reallocation across sectors and firms, to the
+benefit of those able to reach the highest levels of productivity
+growth. The digital revolution, together with the globalisation of
+exchanges, instead requires all firms to rethink their production
+process so as to respond to higher levels of complexity and
+adaptability \citep{caliendo2012}.
+
+%general literature gap
+To date, most of the evidence on the effects of innovation on
+employment relies either upon indirect measure of occupations that can
+be impacted upon by technological progress (see, for example, the
+routine task intensity index approached used, among the others, by
+\citealp{autor_etal_2013_AER} and \citealp{goos_etal_2014}) or on
+measures of technological adoption related to the ICT services (as in
+\citealp{harrigan_etal_2016_NBER}).  On the contrary, evidence on the
+direct effect of the most recent wave of automation technologies is
+more scant.  \cite{acemoglu_restrepo_2017} find a negative effect of
+robots adoption on employment across commuting zones in US during the
+period 1990-2007 whereas in \cite{graetz_michaels_2018} robots are not
+found to decrease employment in a sample of countries and industries
+during the same period.  Both papers use aggregate data. Evidence at
+the firm-level, where decisions about technological adoption are made,
+is even more scarce.  \cite{bessen_2019} study a sample of Dutch firms
+over the period 2000-2016 to show that automation increases the
+probability of workers separating from their employers.
+
+
+\bigskip
 \subsection*{Quale programma utilizzare: la mia scelta}
 Questo documento \`e stato scritto con \LaTeX. Ai seguenti link
 trovate il file \textit{sorgente} e il database per la bibliografia:
 \href{http://mgrazzi.github.io/guida-tesi.tex}{file latex} e
 \href{http://mgrazzi.github.io/bib_file_esempio.bib}{file bibtex}. Tra
-i vari vantaggi di \LaTeX
-(\href{https://tobi.oetiker.ch/lshort/lshort.pdf}{a questo link}
+i vari vantaggi di \LaTeX (\href{https://tobi.oetiker.ch/lshort/lshort.pdf}{a questo link}
 trovate una guida), vi \`e la gestione completamente automatica della
 bibliografia. Ovviamente potete anche usare altri programmi,
 
 
 \bibliography{bib_file_esempio.bib}
-
+%\printbibliography
 
 \end{document}
